@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="V9N-rQ-Gxe">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Sov-W3-O6d">
+            <objects>
+                <navigationController id="V9N-rQ-Gxe" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3t8-SA-Qxs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="sLD-CK-tOj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PN4-cB-bMn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="462" y="-586"/>
+        </scene>
+        <!--Locations View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="LocationsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="45" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="shp-SE-xLF">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="KHz-HA-VGF"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="UNV-TF-bAS"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="shp-SE-xLF" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="OgZ-fD-imR"/>
+                            <constraint firstAttribute="trailing" secondItem="shp-SE-xLF" secondAttribute="trailing" id="dI1-2C-FbU"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="shp-SE-xLF" secondAttribute="bottom" id="nsY-w2-Kpr"/>
+                            <constraint firstItem="shp-SE-xLF" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="oxq-9I-EaW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="y7O-62-suk">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="4mD-Ye-i8t">
+                            <connections>
+                                <action selector="editButtonTouched:" destination="vXZ-lx-hvc" id="Mvc-jG-Wsi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="editBarButton" destination="4mD-Ye-i8t" id="3zB-S9-HrW"/>
+                        <outlet property="tableView" destination="shp-SE-xLF" id="8dO-WT-UeD"/>
+                        <segue destination="FsI-u6-w3Z" kind="show" identifier="ShowWeatherSegue" id="lx0-sO-DFL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1207" y="-586"/>
+        </scene>
+        <!--Weather View Controller-->
+        <scene sceneID="zU7-9D-64B">
+            <objects>
+                <viewController id="FsI-u6-w3Z" customClass="WeatherViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HUt-lU-mD3"/>
+                        <viewControllerLayoutGuide type="bottom" id="K2u-YF-ebj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="d95-dK-fFe">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="rNB-6D-0Je">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="FsI-u6-w3Z" id="skK-aE-DEw"/>
+                                    <outlet property="delegate" destination="FsI-u6-w3Z" id="BdZ-Pd-Inc"/>
+                                </connections>
+                            </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="KN3-5f-DnI">
+                                <rect key="frame" x="281" y="281" width="37" height="37"/>
+                                <color key="color" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="K2u-YF-ebj" firstAttribute="top" secondItem="rNB-6D-0Je" secondAttribute="bottom" id="1Ib-EA-j41"/>
+                            <constraint firstItem="rNB-6D-0Je" firstAttribute="leading" secondItem="d95-dK-fFe" secondAttribute="leading" id="7JW-xn-l6G"/>
+                            <constraint firstAttribute="centerX" secondItem="KN3-5f-DnI" secondAttribute="centerX" id="GgR-K4-e9n"/>
+                            <constraint firstItem="rNB-6D-0Je" firstAttribute="top" secondItem="d95-dK-fFe" secondAttribute="top" id="Snf-wT-4Bv"/>
+                            <constraint firstAttribute="trailing" secondItem="rNB-6D-0Je" secondAttribute="trailing" id="U9K-Gp-wiW"/>
+                            <constraint firstAttribute="centerY" secondItem="KN3-5f-DnI" secondAttribute="centerY" id="ftM-PM-y3G"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="10l-Wv-yxa">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="bAN-Eo-YM7">
+                            <connections>
+                                <action selector="refreshButtonTouched:" destination="FsI-u6-w3Z" id="fnM-pk-ne7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="KN3-5f-DnI" id="eyS-11-i9S"/>
+                        <outlet property="tableView" destination="rNB-6D-0Je" id="aiY-V5-6H0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ugr-q5-fPI" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1971" y="-586"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>LocationId</key>
+		<string>Dublin</string>
+		<key>LocationName</key>
+		<string>Dublin</string>
+		<key>LocationIsSelected</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>LocationId</key>
+		<string>London</string>
+		<key>LocationName</key>
+		<string>London</string>
+		<key>LocationIsSelected</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>LocationId</key>
+		<string>Barcelona</string>
+		<key>LocationName</key>
+		<string>Barcelona</string>
+		<key>LocationIsSelected</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>LocationId</key>
+		<string>New+York</string>
+		<key>LocationName</key>
+		<string>New York</string>
+		<key>LocationIsSelected</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>LocationId</key>
+		<string>Lviv</string>
+		<key>LocationName</key>
+		<string>Lviv</string>
+		<key>LocationIsSelected</key>
+		<false/>
+	</dict>
+</array>
+</plist>

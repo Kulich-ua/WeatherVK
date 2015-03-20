@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Weather forecast time interval</string>
+			<key>Titles</key>
+			<array>
+				<string>3 hours</string>
+				<string>6 hours</string>
+				<string>12 hours</string>
+				<string>24 hours</string>
+			</array>
+			<key>Key</key>
+			<string>WTHConfigurationTimeIntervalKey</string>
+			<key>Values</key>
+			<array>
+				<integer>3</integer>
+				<integer>6</integer>
+				<integer>12</integer>
+				<integer>24</integer>
+			</array>
+			<key>DefaultValue</key>
+			<integer>6</integer>
+		</dict>
+		<dict>
+			<key>AutocapitalizationType</key>
+			<string>None</string>
+			<key>AutocorrectionType</key>
+			<string>No</string>
+			<key>DefaultValue</key>
+			<string>5</string>
+			<key>IsSecure</key>
+			<false/>
+			<key>Key</key>
+			<string>WTHConfigurationNumberOfDaysKey</string>
+			<key>KeyboardType</key>
+			<string>NumberPad</string>
+			<key>Title</key>
+			<string>Number of days</string>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+		</dict>
+	</array>
+	<key>StringsTable</key>
+	<string>Root</string>
+</dict>
+</plist>
