@@ -21,6 +21,8 @@
 
 @property (strong, nonatomic) NSArray *forecasts;
 
+@property (nonatomic) BOOL isLoadingData;
+
 @end
 
 
@@ -32,6 +34,11 @@
     
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     [self.tableView registerNib:[UINib nibWithNibName:ForecastTableViewCellReuseIdentifier bundle:nil] forCellReuseIdentifier:ForecastTableViewCellReuseIdentifier];
+    
+    if (self.isLoadingData) {
+        
+        [self.activityIndicator startAnimating];
+    }
 }
 
 
@@ -43,7 +50,7 @@
 }
 
 
-#pragma mark - Public Interface
+#pragma mark - Accessors
 
 - (void)setLocation:(WTHLocation *)location
 {
@@ -61,24 +68,42 @@
     [self.tableView reloadData];
 }
 
+- (void)setIsLoadingData:(BOOL)isLoadingData {
+    
+    _isLoadingData = isLoadingData;
+    
+    if (isLoadingData) {
+        
+        [self.activityIndicator startAnimating];
+        
+    } else {
+        
+        [self.activityIndicator stopAnimating];
+    }
+}
+
 
 #pragma mark - Internal functionality
 
 - (void)reloadWeatherData
 {
-    if (self.activityIndicator.isAnimating || !self.location) return;
+    if (self.isLoadingData || !self.location) return;
     
-    [self.activityIndicator startAnimating];
+    self.isLoadingData = YES;
     
     __weak typeof(self) weakSelf = self;
     
     [[WTHWebAPIClient sharedInstance] requestWeatherWithLocation:self.location success:^(NSArray *forecasts) {
+        
         weakSelf.forecasts = forecasts;
-        [weakSelf.activityIndicator stopAnimating];
+        self.isLoadingData = NO;
+        
     } failure:^(NSError *error) {
+        
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:TR(@"general.connection.error") message:error.localizedDescription delegate:nil cancelButtonTitle:TR(@"general.ok") otherButtonTitles:nil];
         [alertView show];
-        [weakSelf.activityIndicator stopAnimating];
+        
+        self.isLoadingData = NO;
         NSLog(@"Error: %@", error.localizedDescription);
     }];
 }
