@@ -63,9 +63,12 @@ NSString * const ShowWeatherSegueIdentifier = @"ShowWeatherSegue";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (self.isEditMode) {
+        
         WTHLocation *location = self.locations[indexPath.row];
         location.isSeleceted = YES;
+        
     } else {
+        
         [self performSegueWithIdentifier:ShowWeatherSegueIdentifier sender:self];
         [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
@@ -83,6 +86,7 @@ NSString * const ShowWeatherSegueIdentifier = @"ShowWeatherSegue";
     cell.location = location;
     
     if (self.isEditMode && location.isSeleceted) {
+        
         [tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
     }
 

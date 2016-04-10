@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "WTHLocation.h"
 
+
 @interface WeatherViewController : UIViewController
 
 @property (strong, nonatomic) WTHLocation *location;
-
 
 @end
