@@ -13,7 +13,7 @@
 #import "WTHHourlyForecast.h"
 
 
-static NSString * const WTHWebAPIBaseURL = @"http://api.worldweatheronline.com/free/v2/weather.ashx";
+static NSString * const WTHWebAPIBaseURL = @"https://api.worldweatheronline.com/free/v2/weather.ashx";
 static NSString * const WTHWebAPIKey = @"8864a48fd39ae8b0c741aac8672f9";
 
 static NSString * const WTHWebAPIJSONDataKey = @"data";
