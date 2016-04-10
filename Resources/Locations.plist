@@ -42,5 +42,29 @@
 		<key>LocationIsSelected</key>
 		<false/>
 	</dict>
+	<dict>
+		<key>LocationId</key>
+		<string>Frankfurt</string>
+		<key>LocationName</key>
+		<string>Frankfurt</string>
+		<key>LocationIsSelected</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>LocationId</key>
+		<string>Mainz</string>
+		<key>LocationName</key>
+		<string>Mainz</string>
+		<key>LocationIsSelected</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>LocationId</key>
+		<string>Munich</string>
+		<key>LocationName</key>
+		<string>Munich</string>
+		<key>LocationIsSelected</key>
+		<false/>
+	</dict>
 </array>
 </plist>
