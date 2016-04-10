@@ -7,7 +7,9 @@
 //
 
 #import "WeatherViewController.h"
+
 #import "ForecastTableViewCell.h"
+#import "WTHConstants.h"
 #import "WTHMacroDefinitions.h"
 #import "WTHWebAPIClient.h"
 #import "WTHDayForecast.h"
@@ -39,6 +41,13 @@
         
         [self.activityIndicator startAnimating];
     }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadWeatherData) name:WTHNotificationAppBecomeActive object:nil];
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:WTHNotificationAppBecomeActive object:nil];
 }
 
 

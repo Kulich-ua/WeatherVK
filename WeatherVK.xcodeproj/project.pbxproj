@@ -29,6 +29,7 @@
 		FFB7BF021A0FABCD00C74C32 /* ForecastTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB7BF001A0FABCD00C74C32 /* ForecastTableViewCell.m */; };
 		FFB7BF031A0FABCD00C74C32 /* ForecastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB7BF011A0FABCD00C74C32 /* ForecastTableViewCell.xib */; };
 		FFB7BF081A0FBC4200C74C32 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FFB7BF071A0FBC4200C74C32 /* Settings.bundle */; };
+		FFDDF9A61CBAEAA300EF34D0 /* WTHConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDDF9A51CBAEAA300EF34D0 /* WTHConstants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,8 @@
 		FFB7BF001A0FABCD00C74C32 /* ForecastTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastTableViewCell.m; sourceTree = "<group>"; };
 		FFB7BF011A0FABCD00C74C32 /* ForecastTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForecastTableViewCell.xib; sourceTree = "<group>"; };
 		FFB7BF071A0FBC4200C74C32 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		FFDDF9A41CBAEAA300EF34D0 /* WTHConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTHConstants.h; sourceTree = "<group>"; };
+		FFDDF9A51CBAEAA300EF34D0 /* WTHConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTHConstants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				FFB7BE8D1A0EB05100C74C32 /* WTHConfiguration */,
+				FFDDF9A31CBAEA6F00EF34D0 /* WTHConstants */,
 				FFB7BE8E1A0EB05100C74C32 /* WTHDataSource */,
 				FFB7BE9F1A0EC35400C74C32 /* WTHWebAPIClient */,
 			);
@@ -389,6 +393,15 @@
 				FFB7BF011A0FABCD00C74C32 /* ForecastTableViewCell.xib */,
 			);
 			path = ForecastTableViewCell;
+			sourceTree = "<group>";
+		};
+		FFDDF9A31CBAEA6F00EF34D0 /* WTHConstants */ = {
+			isa = PBXGroup;
+			children = (
+				FFDDF9A41CBAEAA300EF34D0 /* WTHConstants.h */,
+				FFDDF9A51CBAEAA300EF34D0 /* WTHConstants.m */,
+			);
+			path = WTHConstants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -541,6 +554,7 @@
 				FFB7BE911A0EB0C400C74C32 /* WTHDataSource.m in Sources */,
 				FFB7BEB41A0F64EA00C74C32 /* WTHHourlyForecast.m in Sources */,
 				FFB7BEA91A0ED42A00C74C32 /* WTHLocation.m in Sources */,
+				FFDDF9A61CBAEAA300EF34D0 /* WTHConstants.m in Sources */,
 				FFB7BE871A0EA5A200C74C32 /* LocationTableViewCell.m in Sources */,
 				FFB7BE861A0EA5A200C74C32 /* LocationsViewController.m in Sources */,
 				FFB7BEA21A0EC38900C74C32 /* WTHWebAPIClient.m in Sources */,
