@@ -30,14 +30,21 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(WTHWebAPIClient);
     NSURLSessionDataTask *dataTask = [self.urlSession dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *connectionError) {
         
         NSError *jsonParsingError = nil;
-        NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options: NSJSONReadingMutableContainers error:&jsonParsingError];
-        NSDictionary *dataDictionary = responseDictionary[WTHWebAPIJSONDataKey];
-        NSArray *forecastDictionariesArray = dataDictionary[WTHWebAPIJSONWeatherKey];
+        NSMutableArray *forecastsArray = nil;
         
-        NSMutableArray *forecastsArray = [NSMutableArray arrayWithCapacity:[forecastDictionariesArray count]];
-        for (NSDictionary *forecastDictionary in forecastDictionariesArray) {
-            WTHDayForecast *dayForecast = [WTHDayForecast dayForecastWithDictionary:forecastDictionary];
-            [forecastsArray addObject:dayForecast];
+        if (data) {
+            
+            NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options: NSJSONReadingMutableContainers error:&jsonParsingError];
+            NSDictionary *dataDictionary = responseDictionary[WTHWebAPIJSONDataKey];
+            NSArray *forecastDictionariesArray = dataDictionary[WTHWebAPIJSONWeatherKey];
+            
+            forecastsArray = [NSMutableArray arrayWithCapacity:[forecastDictionariesArray count]];
+            
+            for (NSDictionary *forecastDictionary in forecastDictionariesArray) {
+                
+                WTHDayForecast *dayForecast = [WTHDayForecast dayForecastWithDictionary:forecastDictionary];
+                [forecastsArray addObject:dayForecast];
+            }
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
